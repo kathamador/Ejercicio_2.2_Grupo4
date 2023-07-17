@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ejercicio2_2.MainPage"
+             Title="Ejercicio 2.2">
+
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout>
+                <StackLayout HorizontalOptions="Start" Orientation="Horizontal" Margin="0,30,0,10">
+                    <Label Text="POSTS" Margin="30,5,60,5" Padding="0,10,0,0" FontSize="18" FontAttributes="Bold"/>
+                    <Frame CornerRadius="1"  BackgroundColor="#F2F2F2" HasShadow="True" WidthRequest="150" HeightRequest="0" Margin="15,5,15,5">
+                        <Entry x:Name="Descrip" HorizontalTextAlignment="Start" Margin="0,-30,0,-30"/>
+                    </Frame>
+                </StackLayout>
+                <StackLayout>
+                    <Button Text="Buscar" Clicked="btn_buscar_Clicked" x:Name="btn_buscar" HeightRequest="50" Margin="30,0,30,2"  TextTransform="None" FontSize="18" FontAttributes="Bold"/>
+                </StackLayout>
+                <CollectionView x:Name="list">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Label Text="{Binding userId}"
+                               FontSize="Medium" 
+                               Margin="15,0,15,0"/>
+                                <Label Text="{Binding id}"
+                               TextColor="Silver"
+                               FontSize="Small" 
+                               Margin="15,0,15,0"/>
+                                <Label Text="{Binding title}"
+                               TextColor="Silver"
+                               FontSize="Small"
+                               Margin="15,0,15,0"/>
+                                <Label Text="{Binding body}"
+                               TextColor="Silver"
+                               FontSize="Small"
+                               Margin="15,0,15,0"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
